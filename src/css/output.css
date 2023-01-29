@@ -1,0 +1,15 @@
+.output__tip-amount,
+.output__total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  padding: 1em;
+  min-width: 50%;
+}

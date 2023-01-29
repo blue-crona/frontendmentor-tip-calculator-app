@@ -1,0 +1,13 @@
+.input__tip-grid {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 0.5em;
+}
+
+.input__bill {
+  background: url(../assets/icon-dollar.svg) no-repeat left center;
+}
+
+.input__people {
+  background: url(../assets/icon-person.svg) no-repeat left center;
+}
