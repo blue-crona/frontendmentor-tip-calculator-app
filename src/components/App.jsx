@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import "../css/app.css";
 import Attribution from "./Attribution";
-import Input from "./Input";
-import Output from "./Output";
+import TipEdit from "./TipEdit";
+import Tip from "./Tip";
+import Header from "./Header";
 
 function App() {
   const defaultTipParams = {
@@ -17,6 +18,7 @@ function App() {
   };
 
   const [tipParams, setTipParams] = useState(defaultTipParams);
+  const [isInvalid, setIsInvalid] = useState(false);
   const [tip, setTip] = useState(defaultTip);
 
   useEffect(() => {
@@ -34,28 +36,40 @@ function App() {
 
   function Calculate() {
     const { bill, percentage, numberOfPeople } = tipParams;
-    const tipPerPerson = (bill * percentage) / 100 / numberOfPeople;
-    const totalPerPerson = tipPerPerson + bill / numberOfPeople;
+    if (bill && percentage && numberOfPeople && numberOfPeople >= 1) {
+      const tipPerPerson = (bill * percentage) / 100 / numberOfPeople;
+      const totalPerPerson = tipPerPerson + bill / numberOfPeople;
 
-    setTip({ tipPerPerson, totalPerPerson });
+      setTip({ tipPerPerson, totalPerPerson });
+    } else {
+      setTip(defaultTip);
+    }
   }
+
+  const validate = (value) => {
+    const zeroNumberOfPeople = value < 1;
+    setIsInvalid(zeroNumberOfPeople);
+  };
 
   const handleResetOnClick = () => {
     setTipParams(defaultTipParams);
+    validate();
   };
+
+  // Issue:
+  // https://stackoverflow.com/questions/42550341/react-trigger-onchange-if-input-value-is-changing-by-state
 
   return (
     <div className="app">
-      <h1 className="app__heading">
-        <div>Spli</div>
-        <div>tter</div>
-      </h1>
+      <Header />
       <div className="app__container">
-        <Input
+        <TipEdit
           tipParams={tipParams}
+          validate={validate}
+          isInvalid={isInvalid}
           handleTipParamsEdit={handleTipParamsEdit}
-        ></Input>
-        <Output tip={tip} handleResetOnClick={handleResetOnClick} />
+        ></TipEdit>
+        <Tip tip={tip} handleResetOnClick={handleResetOnClick} />
       </div>
       <Attribution />
     </div>

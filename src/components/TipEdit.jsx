@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 const Input = (props) => {
-  const { tipParams, handleTipParamsEdit } = props;
+  const { tipParams, validate, isInvalid, handleTipParamsEdit } = props;
+
+  const [customPercentage, setCustomPercentage] = useState(false);
 
   const handleChange = (value) => {
     handleTipParamsEdit({ ...tipParams, ...value });
@@ -8,11 +12,13 @@ const Input = (props) => {
   const handlePercentageOnClick = (e) => {
     const percentage = e.target.getAttribute("data-percentage");
     handleChange({ percentage });
+    setCustomPercentage(false);
   };
 
   const handlePercentageOnChange = (e) => {
     const percentage = e.target.value;
     handleChange({ percentage });
+    setCustomPercentage(true);
   };
 
   const handleBillOnChange = (e) => {
@@ -22,6 +28,7 @@ const Input = (props) => {
 
   const handleNumberOfPeopleOnChange = (e) => {
     const numberOfPeople = e.target.value;
+    validate(e.target.value);
     handleChange({ numberOfPeople });
   };
 
@@ -34,7 +41,7 @@ const Input = (props) => {
           type="number"
           onChange={handleBillOnChange}
           value={tipParams.bill}
-          max={500000}
+          min={0}
         ></input>
       </div>
       <div>
@@ -78,18 +85,22 @@ const Input = (props) => {
           <input
             type="number"
             className=""
+            min={0}
             onChange={handlePercentageOnChange}
             placeholder="Custom"
+            value={customPercentage ? tipParams.percentage : ""}
           />
         </div>
       </div>
       <div>
-        <h2 className="input__header">Number of People</h2>
+        <div className="no-of-people__container">
+          <h2 className="input__header">Number of People</h2>
+          {isInvalid && <span>Can't be zero</span>}
+        </div>
         <input
-          className="input__people"
+          className={`input__people ${isInvalid ? "input__invalid" : ""}`}
           type="number"
-          min={0}
-          max={100}
+          min={1}
           onChange={handleNumberOfPeopleOnChange}
           value={tipParams.numberOfPeople}
         ></input>

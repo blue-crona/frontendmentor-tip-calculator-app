@@ -44,10 +44,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 
-@import "./recipe.css";
 @import "./attribution.css";
-@import "./input.css";
-@import "./output.css";
+@import "./tip.css";
+@import "./tip-edit.css";
+@import "./header.css";
 
 *,
 *::before,
@@ -82,9 +82,8 @@ body {
   padding: 1em;
 }
 
-.app__heading {
-  text-transform: uppercase;
-  letter-spacing: 1em;
-  font-size: 1rem;
-  text-align: center;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

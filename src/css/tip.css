@@ -15,6 +15,13 @@
 }
 
 .output__amount {
-  min-width: 150px;
+  /* max-width: 500px; */
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: right;
+}
+
+.output__label {
+  width: fit-content;
 }

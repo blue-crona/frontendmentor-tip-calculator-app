@@ -9,21 +9,21 @@ const Output = ({ tip, handleResetOnClick }) => {
     <div className="output">
       <div>
         <div className="output__tip-amount">
-          <span>
+          <span className="output__label">
             <div>Tip Amount</div>
             <div>/ person</div>
           </span>
           <span className="output__amount">
-            {numberFormat(tip.tipPerPerson)}
+            {numberFormat(tip.tipPerPerson || 0)}
           </span>
         </div>
         <div className="output__total">
-          <span>
+          <span className="output__label">
             <div>Total</div>
             <div>/ person</div>
           </span>
           <div className="output__amount">
-            {numberFormat(tip.totalPerPerson)}
+            {numberFormat(tip.totalPerPerson || 0)}
           </div>
         </div>
       </div>
