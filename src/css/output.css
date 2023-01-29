@@ -11,5 +11,10 @@
   background-color: hsl(183, 100%, 15%);
   color: white;
   padding: 1em;
-  min-width: 50%;
+  min-width: 40%;
+}
+
+.output__amount {
+  min-width: 150px;
+  text-align: right;
 }
