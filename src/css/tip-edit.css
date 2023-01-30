@@ -31,3 +31,7 @@
   border-color: red;
   outline: none;
 }
+
+.selected {
+  background-color: hsl(183, 100%, 15%);
+}

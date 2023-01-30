@@ -4,6 +4,7 @@ const Input = (props) => {
   const { tipParams, validate, isInvalid, handleTipParamsEdit } = props;
 
   const [customPercentage, setCustomPercentage] = useState(false);
+  const [percentageSelected, setPercentageSelected] = useState();
 
   const handleChange = (value) => {
     handleTipParamsEdit({ ...tipParams, ...value });
@@ -11,14 +12,18 @@ const Input = (props) => {
 
   const handlePercentageOnClick = (e) => {
     const percentage = e.target.getAttribute("data-percentage");
+    const key = parseInt(e.target.getAttribute("data-key"));
+
     handleChange({ percentage });
     setCustomPercentage(false);
+    setPercentageSelected((prev) => (prev === key ? undefined : key));
   };
 
   const handlePercentageOnChange = (e) => {
     const percentage = e.target.value;
     handleChange({ percentage });
     setCustomPercentage(true);
+    setPercentageSelected(undefined);
   };
 
   const handleBillOnChange = (e) => {
@@ -48,36 +53,41 @@ const Input = (props) => {
         <h2 className="input__header">Select Tip % </h2>
         <div className="input__tip-grid">
           <button
-            className=""
+            className={`${percentageSelected === 1 ? "selected" : ""}`}
             data-percentage={5}
+            data-key={1}
             onClick={handlePercentageOnClick}
           >
             5%
           </button>
           <button
-            className=""
+            className={`${percentageSelected === 2 ? "selected" : ""}`}
             data-percentage={10}
+            data-key={2}
             onClick={handlePercentageOnClick}
           >
             10%
           </button>
           <button
-            className=""
+            className={`${percentageSelected === 3 ? "selected" : ""}`}
             data-percentage={15}
+            data-key={3}
             onClick={handlePercentageOnClick}
           >
             15%
           </button>
           <button
-            className=""
+            className={`${percentageSelected === 4 ? "selected" : ""}`}
             data-percentage={25}
+            data-key={4}
             onClick={handlePercentageOnClick}
           >
             25%
           </button>
           <button
-            className=""
+            className={`${percentageSelected === 5 ? "selected" : ""}`}
             data-percentage={50}
+            data-key={5}
             onClick={handlePercentageOnClick}
           >
             50%
