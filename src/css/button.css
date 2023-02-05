@@ -6,10 +6,7 @@
   font-size: 1.5rem;
   background-color: var(--very-dark-cyan);
   color: var(--white);
-}
-
-.button--small {
-  max-width: 6em;
+  width: 100%;
 }
 
 .button:disabled,
@@ -28,9 +25,9 @@
   text-transform: uppercase;
 }
 
-.button:not(.input__custom-percentage):hover,
-.button:not(.input__custom-percentage):focus,
-.selected {
+/* .button:not(.input__custom-percentage):hover,
+.button:not(.input__custom-percentage):focus, */
+.active {
   background-color: var(--strong-cyan);
   border: none;
   color: var(--very-dark-cyan);

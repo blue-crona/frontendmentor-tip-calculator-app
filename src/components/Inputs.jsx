@@ -76,7 +76,7 @@ const Inputs = (props) => {
             return (
               <button
                 className={`button ${
-                  selectedPercentageId === index ? "selected" : ""
+                  selectedPercentageId === index ? "active" : ""
                 }`}
                 data-percentage={percentage}
                 data-key={index}
@@ -92,7 +92,7 @@ const Inputs = (props) => {
           </label>
           <input
             id="input__custom-percentage"
-            className="button button--small input__custom-percentage input--background-cyan"
+            className="button input__custom-percentage input--background-cyan"
             type="number"
             min={0}
             onChange={handlePercentageOnChange}

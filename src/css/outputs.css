@@ -25,18 +25,11 @@
   padding: 1.5em;
   max-width: 100%;
   border-radius: 1em;
-
-  margin: 0;
-  height: 100%;
 }
 
 .output__amount {
   width: 173px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  box-sizing: border-box;
-
+  overflow: auto;
   word-spacing: -2px;
   text-align: right;
   font-size: 1.5rem;
