@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.25em;
 }
 
 .output__header {
@@ -10,10 +11,6 @@
   margin: 0;
   color: var(--white);
   padding-right: 2em;
-}
-
-.output__total {
-  margin: 1em 0;
 }
 
 .output {
@@ -37,8 +34,8 @@
 }
 
 .output__sub-header {
-  font-size: 0.8rem;
-  color: var(--dark-grayish-cyan);
+  font-size: 0.875rem;
+  color: var(--grayish-cyan);
 }
 
 @media (min-width: 1440px) {
@@ -54,9 +51,5 @@
     width: 300px;
     max-width: 65%;
     font-size: 3rem;
-  }
-
-  .output__total {
-    margin: 3em 0;
   }
 }
