@@ -1,53 +1,10 @@
-/* https://www.frontendmentor.io/solutions/tip-calculator-made-with-react-sass-and-packed-with-vite-pBx9rETXnt */
-/* 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 
 @import "./attribution.css";
-@import "./tip.css";
-@import "./tip-edit.css";
+@import "./inputs.css";
+@import "./outputs.css";
 @import "./header.css";
+@import "./button.css";
 
 *,
 *::before,
@@ -55,35 +12,44 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Colors */
+  /* Primary */
+  --strong-cyan: hsl(172, 67%, 45%);
+
+  /* Neutral */
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Space Mono", monospace;
-  background-color: hsl(185, 41%, 84%);
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0 auto;
-  max-width: 1440px;
+  background-color: var(--light-grayish-cyan);
 }
 
 .app__container {
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
-  margin: 2em;
-  /* width: 100%; */
-  background-color: white;
-  padding: 1em;
+  display: grid;
+  gap: 2em;
+  background-color: var(--white);
+  border-radius: 1.5em;
+  padding: 2em;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+  /* -webkit-appearance: none; */
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .app__container {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 3.5em;
+  }
 }

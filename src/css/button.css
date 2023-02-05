@@ -1,0 +1,43 @@
+.button {
+  padding: 0.25em;
+  border-radius: 0.25em;
+  border: none;
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+}
+
+.button--small {
+  max-width: 6em;
+}
+
+.button:disabled,
+.button[disabled] {
+  background-color: var(--dark-grayish-cyan);
+  color: var(--very-dark-cyan);
+  opacity: 0.7;
+}
+
+.button--strong-cyan {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.button--uppercase {
+  text-transform: uppercase;
+}
+
+.button:not(.input__custom-percentage):hover,
+.button:not(.input__custom-percentage):focus,
+.selected {
+  background-color: var(--strong-cyan);
+  border: none;
+  color: var(--very-dark-cyan);
+}
+
+@media (min-width: 1440px) {
+  .button {
+    padding: 0.5em;
+  }
+}
