@@ -46,8 +46,13 @@
     padding: 2.5em;
   }
 
+  .output__header {
+    padding-right: 0;
+  }
+
   .output__amount {
     width: 300px;
+    max-width: 65%;
     font-size: 3rem;
   }
 

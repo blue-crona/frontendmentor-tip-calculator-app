@@ -22,18 +22,18 @@ const Outputs = ({ tipAmounts, handleResetOnClick }) => {
             <h2 className="output__header">Tip Amount</h2>
             <div className="output__sub-header">/ person</div>
           </div>
-          <span className="output__amount">
+          <div className="output__amount">
             {numberFormat(tipAmounts.tipPerPerson)}
-          </span>
+          </div>
         </div>
         <div className="output__total">
           <div>
             <h2 className="output__header">Total</h2>
             <div className="output__sub-header">/ person</div>
           </div>
-          <span className="output__amount">
+          <div className="output__amount">
             {numberFormat(tipAmounts.totalPerPerson)}
-          </span>
+          </div>
         </div>
       </div>
       <button
