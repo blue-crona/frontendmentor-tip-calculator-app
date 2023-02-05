@@ -11,5 +11,9 @@
 @media (min-width: 1440px) {
   .header {
     margin: unset;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
