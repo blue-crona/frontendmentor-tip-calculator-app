@@ -56,7 +56,11 @@ const Inputs = (props) => {
     <div className="input">
       <div className="bill">
         <h2 className="input__header">Bill</h2>
+        <label htmlFor="input__bill" hidden>
+          Bill amount
+        </label>
         <input
+          id="input__bill"
           className="input__bill input--background-cyan"
           type="number"
           onChange={handleBillOnChange}
@@ -83,7 +87,11 @@ const Inputs = (props) => {
               </button>
             );
           })}
+          <label htmlFor="input__custom-percentage" hidden>
+            Custom Percentage
+          </label>
           <input
+            id="input__custom-percentage"
             className="button button--small input__custom-percentage input--background-cyan"
             type="number"
             min={0}
@@ -98,7 +106,11 @@ const Inputs = (props) => {
           <h2 className="input__header">Number of People</h2>
           {!isValid && <span className="input__errors">Can't be zero</span>}
         </div>
+        <label htmlFor="input__persons" hidden>
+          Number of people
+        </label>
         <input
+          id="input__persons"
           className={`input__persons input--background-cyan ${
             isValid ? "" : "input__invalid"
           }`}
