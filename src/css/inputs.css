@@ -1,9 +1,11 @@
+.input {
+  padding: 0.5em;
+}
+
 .input__percentage-grid {
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   gap: 1em;
-  /* align-items: center;
-  justify-content: center; */
 }
 
 .input__bill {
