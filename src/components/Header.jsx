@@ -1,9 +1,11 @@
 const Header = () => {
   return (
-    <h1 className="header">
-      <div>Spli</div>
-      <div>tter</div>
-    </h1>
+    <header>
+      <h1 className="header">
+        Spli <br />
+        tter
+      </h1>
+    </header>
   );
 };
 
